@@ -10,25 +10,36 @@ let boxAmarela = document.getElementById('boxAmarela');
 mensagemInicial.addEventListener('click', iniciaJogo);
 
 function iniciaJogo () {
+    let contador 
     mensagemInicial.innerText = 'Se atente as cores que vão piscar e repita a sequência.';
     piscaCores;
 }
 
 function piscaCores() {
     let numeroAleatorio = geraNumeroAleatorio(1, 4);
-    if (numeroAleatorio === 1) {
-            boxVerde.style.opacity = '100%';
-    } else if (numeroAleatorio === 2) { 
-            boxVermelha.style.opacity = '100%';
-    } else if (numeroAleatorio === 3) {
-            boxAzul.style.opacity = '100%';
-    } else if (numeroAleatorio === 4) {
-            boxAmarela.style.opacity = '100%';
+    console.log(numeroAleatorio);
+    switch (numeroAleatorio) {
+        case 1:
+            boxVerde.style.boxShadow = '1px 1px 3px 10px green';
+            boxVerde.style.filter = 'brightness(2)';
+        break;
+        case 2:
+            boxVermelha.style.boxShadow = '1px 1px 3px 10px red';
+            boxVermelha.style.filter = 'brightness(2)';
+        break
+        case 3:
+            boxAzul.style.boxShadow = '1px 1px 3px 10px blue';
+            boxAzul.style.filter = 'brightness(2)';
+        break;
+        case 4:
+            boxAmarela.style.boxShadow = '1px 1px 3px 10px yellow';
+            boxAmarela.style.filter = 'brightness(2)';
+        break;
     }
-    boxVerde.style.opacity = '70%';
-    boxVermelha.style.opacity = '70%';
-    boxAzul.style.opacity = '70%';
-    boxAmarela.style.opacity = '70%';
+    boxVerde.style.filter = 'brightness(0.75)';
+    boxVermelha.style.filter = 'brightness(0.75)';
+    boxAzul.style.filter = 'brightness(0.75)';
+    boxAmarela.style.filter = 'brightness(0.75)';
 }
 
 function geraNumeroAleatorio (min, max) {
