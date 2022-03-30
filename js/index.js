@@ -6,13 +6,17 @@ let boxVerde = document.getElementById('boxVerde');
 let boxVermelha = document.getElementById('boxVermelha');
 let boxAzul = document.getElementById('boxAzul');
 let boxAmarela = document.getElementById('boxAmarela');
+let pontos = 5;
+let contador = 0;
 
 mensagemInicial.addEventListener('click', iniciaJogo);
 
 function iniciaJogo () {
-    let contador 
     mensagemInicial.innerText = 'Se atente as cores que vão piscar e repita a sequência.';
-    piscaCores;
+
+    setTimeout(()=>{
+        piscaCores();
+    }, 1000);
 }
 
 function piscaCores() {
@@ -20,26 +24,40 @@ function piscaCores() {
     console.log(numeroAleatorio);
     switch (numeroAleatorio) {
         case 1:
-            boxVerde.style.boxShadow = '1px 1px 3px 10px green';
-            boxVerde.style.filter = 'brightness(2)';
+            acendeCorBox(boxVerde, '5');
+            setTimeout(()=>{
+                apagaCorBox(boxVerde, 1)
+            }, 1000);
         break;
         case 2:
-            boxVermelha.style.boxShadow = '1px 1px 3px 10px red';
-            boxVermelha.style.filter = 'brightness(2)';
-        break
+            acendeCorBox(boxVermelha, '5');
+            setTimeout(()=>{
+                apagaCorBox(boxVermelha, 1)
+            }, 1000);
+        break;
         case 3:
-            boxAzul.style.boxShadow = '1px 1px 3px 10px blue';
-            boxAzul.style.filter = 'brightness(2)';
+            acendeCorBox(boxAzul, '5');
+            setTimeout(()=>{
+                apagaCorBox(boxAzul, 1)
+            }, 1000);
         break;
         case 4:
-            boxAmarela.style.boxShadow = '1px 1px 3px 10px yellow';
-            boxAmarela.style.filter = 'brightness(2)';
+            acendeCorBox(boxAmarela, '5');
+            setTimeout(()=>{
+                apagaCorBox(boxAmarela, 1)
+            }, 1000);
         break;
     }
-    boxVerde.style.filter = 'brightness(0.75)';
-    boxVermelha.style.filter = 'brightness(0.75)';
-    boxAzul.style.filter = 'brightness(0.75)';
-    boxAmarela.style.filter = 'brightness(0.75)';
+}
+
+function acendeCorBox(box, valor) {
+    box.style.filter = `brightness(${valor})`;
+    console.log(`Mudou o box`);
+}
+
+function apagaCorBox (box, valor) {
+    box.style.filter = `brightness(${valor})`;
+    console.log(`Apagou o box`);
 }
 
 function geraNumeroAleatorio (min, max) {

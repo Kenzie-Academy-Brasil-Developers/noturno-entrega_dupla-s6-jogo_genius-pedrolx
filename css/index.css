@@ -36,25 +36,25 @@ h1 {
 }
 
 #boxVerde {
-    background-color: green;
+    background-color: rgb(15, 94, 15);
     border-top-left-radius: 100%;
     filter: brightness(0.75);
 }
 
 #boxVermelha {
-    background-color: red;
+    background-color: rgb(153, 1, 1);
     border-top-right-radius: 100%;
     filter: brightness(0.75);
 }
 
 #boxAmarela {
-    background-color: yellow;
+    background-color: rgb(156, 156, 0);
     border-bottom-left-radius: 100%;
     filter: brightness(0.75);
 }
 
 #boxAzul {
-    background-color: blue;
+    background-color: rgb(1, 1, 136);
     border-bottom-right-radius: 100%;
     filter: brightness(0.75);
 }
